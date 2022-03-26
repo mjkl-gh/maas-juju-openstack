@@ -14,15 +14,16 @@ machines:
   '0':
     series: focal
     constraints: tags=openstack
+  '1':
+    series: focal
+    constraints: tags=openstack
   '2':
     series: focal
     constraints: tags=openstack
   '3':
     series: focal
     constraints: tags=openstack
-  '1':
-    series: focal
-    constraints: tags=openstack
+
 
 applications:
 
@@ -41,7 +42,6 @@ applications:
     to:
     - lxd:0
     - lxd:1
-    - lxd:2
 
   ceph-osd:
     annotations:
@@ -123,8 +123,8 @@ applications:
       "": admin-network
     to:
     - lxd:0
-    - lxd:3
     - lxd:2
+    - lxd:3
 
   cinder-ceph:
     annotations:
@@ -168,9 +168,9 @@ applications:
     bindings:
       "": admin-network
     to:
-    - lxd:3
     - lxd:0
     - lxd:1
+    - lxd:3
 
   glance-simplestreams-sync:
     charm: cs:glance-simplestreams-sync
@@ -226,8 +226,8 @@ applications:
       "": admin-network
     series: focal
     to:
-     - 'lxd:3'
      - 'lxd:0'
+     - 'lxd:3'
 
   neutron-mysql-router:
     annotations:
@@ -273,9 +273,9 @@ applications:
     bindings:
       "": admin-network
     to:
-    - lxd:3
-    - lxd:2
     - lxd:1
+    - lxd:2
+    - lxd:3
 
   placement-hacluster:
     charm: 'cs:hacluster'
@@ -372,9 +372,9 @@ applications:
       "": admin-network
     to:
     - '0'
+    - '1'
     - '2'
     - '3'
-    - '1'
 
   ntp:
     annotations:
@@ -420,9 +420,9 @@ applications:
     bindings:
       "": admin-network
     to:
-    - lxd:3
     - lxd:0
     - lxd:2
+    - lxd:3
  
   rabbitmq-server:
     annotations:
@@ -433,9 +433,9 @@ applications:
     bindings:
       "": admin-network
     to:
-    - lxd:3
-    - lxd:2
     - lxd:1
+    - lxd:2
+    - lxd:3
 
   mysql-innodb-cluster:
     annotations:
@@ -461,9 +461,9 @@ applications:
     bindings:
       "": admin-network
     to:
-    - lxd:3
     - lxd:0
     - lxd:1
+    - lxd:3
 
   ovn-chassis:
     annotations:
@@ -506,8 +506,8 @@ applications:
       vip: 192.168.51.208
     to:
     - lxd:0
-    - lxd:3
     - lxd:2
+    - lxd:3
 
 relations:
 - - nova-compute:amqp
