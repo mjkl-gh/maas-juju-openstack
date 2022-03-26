@@ -1,0 +1,7 @@
+network:
+  vlans:
+    lxdbr0.20:
+      macaddress: d8:c4:97:4e:45:a8
+      id: 20
+      link: lxdbr0
+      dhcp4: true

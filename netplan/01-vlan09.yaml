@@ -1,0 +1,7 @@
+network:
+  vlans:
+    lxdbr0.09:
+      id: 9
+      link: lxdbr0
+      addresses: [192.168.9.1/24]
+
